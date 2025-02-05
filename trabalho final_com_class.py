@@ -13,8 +13,7 @@ class GastoBase(ABC):  # Classe Abstrata vazia
 
 class Gasto(GastoBase):   # Classe derivada
     def __init__(self):
-        self.total_gastos = 0  # Total de gastos a zero, depois soma a 
-                               # quando cada gasto é inserido
+        self.total_gastos = 0  # Total de gastos a zero, depois soma a quando cada gasto é inserido
         open("dinheiro.txt", "w").close() # Abre e limpa o ficheiro 
                                           # "dinheiro.txt"
                                           
@@ -23,9 +22,8 @@ class Gasto(GastoBase):   # Classe derivada
 
     def registrar_gasto(self, valor, categoria):
         self.total_gastos += valor # Soma gasto ao total de gastos
-        with open("dinheiro.txt", "a") as f: # Abre o ficheiro e escreve os 
-                                             # novos gastos e categorias
-            f.write(f"Gasto: {valor:.2f}€ - Categoria: {categoria}\n") # Escreve
+        with open("dinheiro.txt", "a") as f: # Abre o ficheiro e escreve os novos gastos e categorias
+            f.write(f"Gasto: {valor:.2f}€ - Categoria: {categoria}\n") # Escreve 
 
 
 # --------    Programa principal     ------
@@ -43,8 +41,7 @@ while True:
         if gasto == 0:
             break # Quando digitar "0" Para o programa
         elif gasto < 0:
-            print("Por favor, insira um valor positivo.") # Quando o numero é 
-                                         # menor que 0 continua dentro do loop
+            print("Por favor, insira um valor positivo.") # Quando o numero é menor que 0 continua dentro do loop
         else:
             categoria = input("Digite a categoria do gasto: ") # Quando o valor é maior que zero, pergunta qual é a categoria do gasto
             gasto_manager.registrar_gasto(gasto, categoria) # Chama o metodo registar_gasto para registar o gasto e a categoria.
