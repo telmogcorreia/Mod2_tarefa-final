@@ -14,14 +14,14 @@ class GastoBase(ABC):  # Classe Abstrata vazia
 class Gasto(GastoBase):   # Classe Derivada
     def __init__(self):
         self.total_gastos = 0  # Total de gastos a zero, depois soma a quando cada gasto é inserido
-        with open("dinheiro.txt", "w") as f: # Abre e escreve o cabeçalho do fichiro "dinheiro.txt"
+        with open("gastos.txt", "w") as f: # Abre e escreve o cabeçalho do fichiro "dinheiro.txt"
             f.write("Aqui estão os seus gastos e categorias.\n")
             f.write("\n")
             f.write("\n")
                                                               
     def registrar_gasto(self, valor, categoria):
         self.total_gastos += valor # Soma gasto ao total de gastos
-        with open("dinheiro.txt", "a") as f: # Abre o ficheiro e escreve os novos gastos e categorias
+        with open("gastos.txt", "a") as f: # Abre o ficheiro e escreve os novos gastos e categorias
             f.write(f"Gasto: {valor:.2f}€ - Categoria: {categoria}\n") # Escreve 
 
 # --------    Programa principal     ------
@@ -46,6 +46,7 @@ while True:
     except ValueError:  # Caso não digite um numero aparece está mensagem
         print("Por favor, insira um número válido.")
 
-with open('dinheiro.txt', 'a') as f:  # Abre o ficheiro para escrever o total
+with open('gastos.txt', 'a') as f:  # Abre o ficheiro para escrever o total
     f.write(f"\nTotal dos gastos: {gasto_manager.total_gastos:.2f}€") # Escreve o total no ficheiro
 print(f"\nTotal dos gastos: {gasto_manager.total_gastos:.2f}€") # Escreve o total na consola do utilizador
+print("\nCriou também um ficheiro com os gastos e as respectivas Categorias.")
