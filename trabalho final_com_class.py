@@ -14,12 +14,8 @@ class GastoBase(ABC):  # Classe Abstrata vazia
 class Gasto(GastoBase):   # Classe derivada
     def __init__(self):
         self.total_gastos = 0  # Total de gastos a zero, depois soma a quando cada gasto é inserido
-        open("dinheiro.txt", "w").close() # Abre e limpa o ficheiro 
-                                          # "dinheiro.txt"
+        open("dinheiro.txt", "w").close() # Abre e limpa o ficheiro "dinheiro.txt"
                                           
-          
-
-
     def registrar_gasto(self, valor, categoria):
         self.total_gastos += valor # Soma gasto ao total de gastos
         with open("dinheiro.txt", "a") as f: # Abre o ficheiro e escreve os novos gastos e categorias
