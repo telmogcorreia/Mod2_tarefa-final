@@ -18,13 +18,11 @@ class Gasto(GastoBase):   # Classe Derivada
             f.write("Aqui estão os seus gastos e categorias.\n")
             f.write("\n")
             f.write("\n")
-                    
-                                                  
+                                                              
     def registrar_gasto(self, valor, categoria):
         self.total_gastos += valor # Soma gasto ao total de gastos
         with open("dinheiro.txt", "a") as f: # Abre o ficheiro e escreve os novos gastos e categorias
             f.write(f"Gasto: {valor:.2f}€ - Categoria: {categoria}\n") # Escreve 
-
 
 # --------    Programa principal     ------
 
